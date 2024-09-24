@@ -1,10 +1,10 @@
-import clock from '../public/colock.png';
+function MyClockImage() {
 
-function MyClockImage()
-{
-    return (
-        <img src={clock} alt="Clock" />
-    );
+  return(
+    <div>
+    이미지
+    </div>
+  );
 }
 
-export default MyClockImage;
+export default MyClockImage ;

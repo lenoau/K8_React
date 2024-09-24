@@ -1,10 +1,10 @@
-function MyClockTime()
-{
-    return (
-        <p>
-            {new Date().toLocaleTimeString()}
-        </p>
-    );
+function MyClockTime() {
+
+  return(
+    <div>
+    시간
+    </div>
+  );
 }
 
-export default MyClockTime;
+export default MyClockTime ;
