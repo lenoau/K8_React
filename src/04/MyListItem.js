@@ -1,4 +1,4 @@
-import {useState} from "react"; //useState 값을 바꾸기 위해 useState Hook을 import (좋아요 클릭시 값 증가)
+import {useState} from "react"; //useState 재렌더링 하기 위해 useState Hook을 import (좋아요 클릭시 값 증가)
 export default function MyListItem({imgUrl ,content, title}) {
   const [n, setN] = useState(0); //값을 2개 받아야(2번째 값은 Set{N}) useState Hook을 사용 할 수 있다.
   const hClick = () => {

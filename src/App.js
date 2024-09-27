@@ -5,7 +5,8 @@ import { FaHome } from "react-icons/fa";
 // import MyClock from './02/MyClock' ;
 // import MyDiv1 from './03/MyDiv1';
 //import MyList from './04/MyList';
-import Lotto from './05/Lotto';
+//import Lotto from './05/Lotto';
+import Foodmain from './06/Foodmain';
 
  function App() {
   return (
@@ -22,10 +23,11 @@ import Lotto from './05/Lotto';
         </p>
       </header>
       <main className='w-full grow
-                       flex flex-col justify-center items-center
+                       flex flex-col items-center
                        overflow-y-auto'>
         {/* <MyList /> */}
-      <Lotto />
+      {/* <Lotto /> */}
+      <Foodmain />
       </main>
       <footer className='w-full h-20
                          flex justify-center items-center
