@@ -24,7 +24,7 @@ import BoxOffice from './07/BoxOffice';
         </p>
       </header>
       <main className='w-full grow
-                       flex flex-col items-center
+                       flex flex-col items-center justify-center
                        overflow-y-auto'>
         {/* <MyClock /> */}
         {/* <MyList /> */}
