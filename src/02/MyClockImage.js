@@ -1,8 +1,9 @@
+import clock from './colock.png'
 function MyClockImage() {
 
   return(
     <div>
-    이미지
+    <img src={clock} alt="시계" className='h-3/4' />
     </div>
   );
 }
