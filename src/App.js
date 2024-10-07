@@ -2,12 +2,14 @@ import './App.css';
 import { FaHome } from "react-icons/fa";
 
 // import Hello from './01/Hello' ;
-import MyClock from './02/MyClock' ;
+//import MyClock from './02/MyClock' ;
 // import MyDiv1 from './03/MyDiv1';
 //import MyList from './04/MyList';
 //import Lotto from './05/Lotto';
-import Foodmain from './06/Foodmain';
-import BoxOffice from './07/BoxOffice';
+//import Foodmain from './06/Foodmain';
+//import BoxOffice from './07/BoxOffice';
+//import MyBox from './08/MyBox';
+import Traffic from './09/Traffic';
 
  function App() {
   return (
@@ -24,13 +26,15 @@ import BoxOffice from './07/BoxOffice';
         </p>
       </header>
       <main className='w-full grow
-                       flex flex-col items-center justify-center
+                       flex flex-col items-center
                        overflow-y-auto'>
         {/* <MyClock /> */}
         {/* <MyList /> */}
       {/* <Lotto /> */}
       {/* <Foodmain /> */}
-      <BoxOffice />
+      {/* <BoxOffice /> */}
+      {/* <MyBox /> */}
+      <Traffic />
       </main>
       <footer className='w-full h-20
                          flex justify-center items-center

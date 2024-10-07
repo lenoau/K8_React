@@ -5,8 +5,8 @@ export default function TailButton({caption, color, handleClick}) {
     'orange': 'bg-orange-800',
   };
   const btColorHover = {
-    'blue': 'bg-blue-600',
-    'orange': 'bg-orange-600',
+    'blue': 'hover:bg-lime-800',
+    'orange': 'hover:bg-orange-600',
   };
 
   return (
