@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import TailButton from "../Ui/TailButton"
 
 export default function TrafficNav({title, c, sel,  setSel}) {

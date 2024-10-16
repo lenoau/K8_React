@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import BoxOfficeTr from './BoxOfficeTr';
 export default function BoxOffice() 
 {
@@ -6,6 +6,27 @@ export default function BoxOffice()
     const [box, setBox] = useState();
     const [trs, setTrs] = useState();
     const [info, setInfo] = useState();
+    const dtRef = useRef();
+
+    const getYesterday = () => {
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() -1);
+
+    const year = yesterday.getFullYear();
+    let month = yesterday.getMonth() + 1;
+    let day = yesterday.getDate();
+
+    //월 2자리
+    month = month < 10 ? '0' + month : month ;
+    day = day < 10 ? '0' + day : day ;
+
+    //month = `0${month}`.slice(-2);
+    //month = `${month}`.padStart(2, 0);
+    //consolw.log("month = ", month);
+    
+    return `${year}-${month}-${day}`;
+
+    }
 
     const handleTrClick = (item) => {
         console.log(item);
@@ -13,9 +34,14 @@ export default function BoxOffice()
         setInfo(tm)
     }
 
-    const getFetchData = () => {
+    const handleDt = () => {
+        const cdt = dtRef.current.value.replaceAll('-', '');
+        getFetchData(cdt);
+    }
+
+    const getFetchData = (dt) => {
         const apiKey = process.env.REACT_APP_MV_KEY; //KEY값 가져오기
-        const dt = '20240929';
+        //const dt = '20240929';
 
         let url = `https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?`;
         url = `${url}key=${apiKey}&targetDt=${dt}`;
@@ -26,9 +52,13 @@ export default function BoxOffice()
          .then(data => setBox(data.boxOfficeResult.dailyBoxOfficeList)) //json타입 data 불러오기
          .catch(err => console.log(err))
     }
+
     //맨 처음 한번 실행 UseEffect - React가 알아서 실행
     useEffect( () => {
-        getFetchData();
+        const ydt = getYesterday();
+        console.log(ydt);
+        dtRef.current.value = ydt;
+        getFetchData(ydt.replaceAll('-',''));
     }, []);
     
     //fetch 데이터가 채워지면
@@ -44,6 +74,15 @@ export default function BoxOffice()
   return (
     <div className='w-full h-scrren flex flex-col justify-center items-center'>
         <div className='w-full'>
+        <div className='flex w-full justify-end p-2 font-bold border border-gray-300'>
+            <div className='pr-5'>
+                박스오피스
+            </div>
+            <div>
+                <input ref = {dtRef} type='date' id='dt' name='dt' 
+                        onChange={handleDt}/>
+            </div>
+        </div>
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead className="text-md justify-center font-bold text-gray-700 uppercase bg-gray-50 ">
             <tr>
