@@ -3,7 +3,7 @@ import { FaHome } from "react-icons/fa";
 
 // import Hello from './01/Hello' ;
 import MyClock from './02/MyClock' ;
-// import MyDiv1 from './03/MyDiv1';
+//import MyDiv1 from './03/MyDiv1';
 //import MyList from './04/MyList';
 import Lotto from './05/Lotto';
 import Foodmain from './06/Foodmain';
@@ -17,6 +17,8 @@ import Festival from './12/Festival';
 import Fcst from './14/Fcst';
 import FcstList from './14/FcstList';
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+import RecoilMain from './15/RecoilMain';
+import Rest from './16/Rest';
 
 function App() {
   
@@ -31,14 +33,17 @@ function App() {
           K-digital 8기
         </p>
         <ul className= 'flex justify-center items-center text-xl font-bold'>
-          <li className='mx-2 p-2 hover:bg-blue-400 rounded-md'><Link to='/시계'>시계</Link></li>
-          <li className='mx-2 p-2 hover:bg-blue-400 rounded-md'><Link to='/로또'>로또생성기</Link></li>
-          <li className='mx-2 p-2 hover:bg-blue-400 rounded-md'><Link to='/푸드'>푸드뱅크</Link></li>
-          <li className='mx-2 p-2 hover:bg-blue-400 rounded-md'><Link to='/박스오피스'>박스오피스</Link></li>
+          <li className='mx-2 p-2 hover:bg-blue-400 rounded-md'><Link to ='/시계'>시계</Link></li>
+          <li className='mx-2 p-2 hover:bg-blue-400 rounded-md'><Link to ='/로또'>로또생성기</Link></li>
+          <li className='mx-2 p-2 hover:bg-blue-400 rounded-md'><Link to ='/푸드'>푸드뱅크</Link></li>
+          <li className='mx-2 p-2 hover:bg-blue-400 rounded-md'><Link to ='/박스오피스'>박스오피스</Link></li>
           <li className='mx-2 p-2 hover:bg-blue-400 rounded-md'><Link to ='/교통사고'>교통사고</Link></li>
           <li className='mx-2 p-2 hover:bg-blue-400 rounded-md'><Link to ='/관광'>관광</Link></li>
           <li className='mx-2 p-2 hover:bg-blue-400 rounded-md'><Link to ='/축제'>축제</Link></li>
-          <li className='mx-4 p-2 hover:bg-slate-700 hover:text-white rounded-md'><Link to='/fcst'>일기예보</Link></li>
+          <li className='mx-4 p-2 hover:bg-blue-400 rounded-md'><Link to ='/fcst'>일기예보</Link></li>
+          <li className='mx-4 p-2 hover:bg-blue-400 rounded-md'><Link to ='/Rest'>Rest</Link></li>
+
+          
         </ul>
         <p className='text-4xl font-bold p-5'>
           <Link to='/'><FaHome /></Link>
@@ -62,9 +67,11 @@ function App() {
       {/* <RouteMain /> */}
       <Route path='/fcst' element={<Fcst />} />
       <Route path='/fcstlist' element={<FcstList />} />
+      <Route path='/RecoilMain' element={<RecoilMain />} />
+      <Route path='/Rest' element={<Rest />} />
       </Routes>
       </main>
-     
+
       <footer className='w-full h-20
                          flex justify-center items-center
                          bg-black text-white'>

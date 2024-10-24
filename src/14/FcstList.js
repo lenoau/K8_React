@@ -15,6 +15,10 @@ export default function FcstList() {
   //form 값을 참조하기 위한 ref변수
   const selRef = useRef() ;
 
+  //sky 항목
+  const sky = {'1': '맑음', '3': '구름많음', '4': '흐림'}
+  const pty = {'0': '없음', '1': '비', '2': '비/눈', '3': '눈', '4': '소나기', '5': '빗방울', '6': '빗방울눈날림', '7': '눈날림'}
+
   const [sParams] = useSearchParams() ;
   //http://localhost:3000/fcstlist?gubun=%EC%B4%88%EB%8B%A8%EA%B8%B0%EC%98%88%EB%B3%B4&dt=20241015&x=98&y=76$area=%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C
   const gubun = sParams.get('gubun') ;
@@ -36,7 +40,11 @@ export default function FcstList() {
                                     <td>{code.항목명}({item.category})</td>
                                     <td>{item.fcstDate.slice(0,4)}.{item.fcstDate.slice(4,6)}.{item.fcstDate.slice(6,8)}</td>
                                     <td>{item.fcstTime.slice(0,2)} : {item.fcstTime.slice(2,4)}</td>
-                                    <td>{item.fcstValue} {code.단위}</td>
+                                    <td>
+                                      {
+                                        item.category === 'SKY' ? sky[item.fcstValue] : item.fcstValue + code.단위
+                                      }
+                                    </td>
                                 </tr>)
                     setTrs(tm);
     console.log(tm);

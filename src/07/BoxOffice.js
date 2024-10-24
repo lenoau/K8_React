@@ -83,7 +83,7 @@ export default function BoxOffice()
                         onChange={handleDt}/>
             </div>
         </div>
-        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <table className="w-full text-sm text-left rtl:text-right text-gray-500">
         <thead className="text-md justify-center font-bold text-gray-700 uppercase bg-gray-50 ">
             <tr>
                 <th scope="col" class="px-6 py-3">
